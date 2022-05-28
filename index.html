@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+
+    // Copy By value ( number, string, boolean )
+
+    // const a = 10;
+
+    // function func1(a) {
+    //   a = 100;
+    //   console.log("Inside Function",a);
+    // }
+
+    // func1(a);
+
+    // console.log("Global Scope",a);
+
+    // Copy by Reference
+    // const arr = [1,2,3];
+
+    // console.log("Line 25", arr); // --> [1,2,3]
+
+    // function funcArr(arrArg) {
+    //   arrArg[1] = 200;
+    // }
+
+    // funcArr(arr);
+
+    // console.log("line 31", arr);
+
+    // const obj = {
+    //   name: 'Sanjay',
+    //   role: 'developer'
+    // };
+
+    // console.log("Line 41", obj);
+
+    // function funcObj(objArg) {
+    //   objArg['role'] = 'Engineer';
+    // }
+    
+    // funcObj(obj);
+
+    // console.log("Line 49", obj);
+
+    // Var with in gloabl & func scope
+    // var a = 100;
+
+    // function funcVar () {
+    //   var a = 300;
+    // }
+
+    // funcVar();
+
+    // console.log(a);    
+
+    // var in gloabl & block scope
+    // var a = 100;
+
+    // {
+    //   var a = 300;
+    // }
+
+    // console.log(a);    
+
+    // let in global and block scope
+    // let a = 100;
+
+    // {
+    //   let a = 300;
+    // }
+
+    // console.log(a);    
+
+    // let in global & func scope
+    // let a = 100;
+
+    // function funcVar () {
+    //   let a = 300;
+    // }
+
+    // funcVar();
+
+    // console.log(a);   
+
+    // let x; // Declaration without initial value
+
+    // x = 100; // initial value
+
+    // let z = 300; // Declaration with initial values
+
+    // z = 500; // Re-Initialization
+
+
+    // const PI = 800; // Declaration without initial value not possible
+
+    //PI = 3.14030; // Re-Initialization not possible
+
+    // var & let/const ----> Scope
+    // var/let & const ----> Declaration & initialization
+
+
+    // Hoisting
+    
+  
+    
+    // console.log("Line 111", q);
+   
+    // let q = 100;
+
+    // console.log("Line 118", q)
+
+    // Functions
+
+    // function sumOfArr(arrVal) {
+    //   var result = 0;
+    //   arrVal.forEach((n) => {
+    //     result += n;
+    //   });
+    //   return result;
+    // }
+
+    // var arr = [1,2,3,4,5];
+
+    // console.log(sumOfArr(arr));
+
+    // console.log(result);
+
+    function arrEles(arr, n) {
+      if(n === undefined) {
+        return arr[0];
+      }
+
+      if(n > 0) {
+        return arr.slice(0, n); 
+        // return arr.slice(-n); 
+      }
+
+      return [];
+    } 
+
+    // function arrLastEles() {
+
+    // }
+
+    console.log("Test Case 1",arrEles([7,9,0,-2]));
+    console.log("Test Case 2",arrEles([0,6,4,5]));
+    console.log("Test Case 3",arrEles([1,2,3,4], 3));
+    console.log("Test Case 4",arrEles([1,2,3,4], -3));
+
+    // to find most freq l
+    function mostFreqInArr(arr) {
+      // Find the freq of element in array
+      var freqObj = {};
+      // [1,1,1, 2, 3, 2, a,a,a,a,a]
+      arr.forEach(element => {
+        const ketStr = element.toString();
+        if( Object.keys(freqObj).includes(ketStr) ) {
+          freqObj[ketStr] += 1; // { '1': 1 + 1 + ... } 
+        } else {
+          freqObj[ketStr] = 1; // { '1': 1 }
+        }
+      });
+
+      console.log(freqObj);// freq is Done
+
+      var max = 0;
+      var maxFreqKey = undefined;
+
+      for (const key in freqObj) {
+        if( max < freqObj[key] ) {
+          maxFreqKey = key;
+          max = freqObj[key];
+        }
+      }
+      console.log("Max Freq Key", maxFreqKey, "Max Frequency", max);
+    }
+
+    mostFreqInArr([1,1,1, 2, 3, 2, 'a','a','a','a','a']);
+    
+
+  </script>
+</head>
+<body>
+  <h1>Window vs Document</h1>
+</body>
+</html>
